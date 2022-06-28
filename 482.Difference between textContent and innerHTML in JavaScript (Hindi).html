@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="myp"></p>
+        <p id="mypOne"></p>
+        <p id="mypTwo"></p>
+        <script>
+            var p = document.getElementById("myp");
+            p.textContent = "Hello World";
+
+            var pOne = document.getElementById("mypOne");
+            pOne.textContent = "<em>Hello Friends chai pello</em>";
+
+            var pTwo = document.getElementById("mypTwo");
+            pTwo.innerHTML = "<em>Hello Friends chai pello</em>";
+        </script>
+    </body>
+</html>

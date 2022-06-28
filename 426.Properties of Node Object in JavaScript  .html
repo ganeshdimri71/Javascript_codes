@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="myid">
+            We are Learning JS
+            <!--This is a Comment -->
+        </h1>
+        <p id="myid1">I am Paragraph</p>
+        <script>
+            document.write("--------Document--------- " + "<br>");
+            document.write("document.nodeName: " + document.nodeName + "<br>");
+            document.write(
+                " document.nodeValue: " + document.nodeValue + "<br>"
+            );
+            document.write("document.nodeType: " + document.nodeType + "<br>");
+
+            document.write("--------Element--------- " + "<br>");
+            var elm = document.getElementById("myid");
+            document.write("document.nodeName: " + elm.nodeName + "<br>");
+            document.write(" document.nodeValue: " + elm.nodeValue + "<br>");
+            document.write("document.nodeType: " + elm.nodeType + "<br>");
+
+            document.write("--------Text--------- " + "<br>");
+            var elm = document.getElementById("myid");
+            document.write(
+                "document.nodeName: " + elm.firstChild.nodeName + "<br>"
+            );
+            document.write(
+                " document.nodeValue: " + elm.firstChild.nodeValue + "<br>"
+            );
+            document.write(
+                "document.nodeType: " + elm.firstChild.nodeType + "<br>"
+            );
+
+            document.write("--------Text--------- " + "<br>");
+            var elm = document.getElementById("myid");
+            document.write(
+                "document.nodeName: " +
+                    elm.firstChild.nextSibling.nodeName +
+                    "<br>"
+            );
+            document.write(
+                " document.nodeValue: " +
+                    elm.firstChild.nextSibling.nodeValue +
+                    "<br>"
+            );
+            document.write(
+                "document.nodeType: " +
+                    elm.firstChild.nextSibling.nodeType +
+                    "<br>"
+            );
+
+            var elmOne = (document.getElementById("myid").firstChild.nodeValue =
+                "I am Ganesh Dimri");
+            document.write(
+                " document.nodeValue: " + elm.firstChild.nodeValue + "<br>"
+            );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="myid" class="myclass">
+            We are Learning JS
+            <!--This is a Comment -->
+        </h1>
+        <p id="myid1">I am Paragraph</p>
+        <script>
+            var result = document.getElementById("myid");
+            var getAttr = result.attributes[0].name;
+            var getAttrOne = result.attributes[0].value;
+            var getAttrTwo = result.attributes[1].name;
+            var getAttrThree = result.attributes[1].value;
+            var length = result.attributes.length;
+            document.write(`getAttr : ${getAttr} <br>`);
+            document.write(`getAttrOne : ${getAttrOne} <br>`);
+            document.write(`getAttrOne : ${getAttrTwo} <br>`);
+            document.write(`getAttrOne : ${getAttrThree} <br>`);
+            document.write(`length : ${length} <br>`);
+
+            for (let i = 0; i < result.length; i++) {
+                document.write(
+                    `result.attributes[i].nodeName = ${result.attributes[i].name} <br>``result.attributes[i].nodeValue = ${result.attributes[i].value} <br>`
+                );
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #myCanvas {
+                pointer-events: none; /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+                position: absolute;
+                z-index: 2;
+            }
+
+            #con {
+                overflow: hidden;
+                height: 600px;
+                width: 100%;
+            }
+            #img {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="con">
+            <canvas id="myCanvas"></canvas>
+            <img src="th.jpg" alt="" id="img" usemap="#img_map" />
+            <map name="img_map"><area shape="circle" />......</map>
+        </div>
+        <script>
+            function drawCir(coOrdStr) {
+                var mCoords = coOrdStr.split(",");
+                var x, y, r;
+                x = mCoords[0];
+                y = mCoords[1];
+                r = mCoords[2];
+                hdc.beginPath();
+                hdc.arc(x, y, r, 0, 2 * Math.PI);
+                hdc.fill();
+                hdc.stroke();
+            }
+
+            function myInit() {
+                // get the target image
+                var img = byId("mape");
+
+                var x, y, w, h;
+
+                // get it's position and width+height
+                x = img.offsetLeft;
+                y = img.offsetTop;
+                w = img.clientWidth;
+                h = img.clientHeight;
+
+                // move the canvas, so it's contained by the same parent as the image
+                var imgParent = img.parentNode;
+                var can = byId("myCanvas");
+                // imgParent.appendChild(can);
+
+                // place the canvas in front of the image
+                can.style.zIndex = 1;
+
+                // position it over the image
+                can.style.left = x + "px";
+                can.style.top = y + "px";
+
+                // make same size as the image
+                can.setAttribute("width", w + "px");
+                can.setAttribute("height", h + "px");
+
+                // get it's context
+                hdc = can.getContext("2d");
+
+                // set the 'default' values for the colour/width of fill/stroke operations
+                hdc.fillStyle = "red";
+                hdc.strokeStyle = "red";
+                hdc.lineWidth = 2;
+
+                $("area").each(function () {
+                    var coordStr = $(this).attr("coords");
+                    drawCir(coordStr);
+                });
+            }
+        </script>
+    </body>
+</html>

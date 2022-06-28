@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" id="myidOne">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body id="myidOne">
+        <!-- 
+        var result = document.getElementById("myid");
+        var getAttrOne = result.attributes[0].value;
+        var length = result.attributes.length;
+        document.write(`getAttr : ${getAttr} <br>`);
+        document.write(`length : ${length} <br>`);
+         console.log("result.parentNode :", result.parentNode);
+
+         for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}  <br>`
+                );
+                console.log(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}`
+                );
+            }
+     -->
+        <h1 class="myclass" id="myid">
+            <!--This is a Comment -->
+            <span> We are Learning JS</span>
+            <em>Hello</em>
+            <!--This is a another Comment -->
+        </h1>
+        <p id="myid1">I am Paragraph</p>
+        <p id="myid2"><span>I am a Span element</span> I am Paragraph</p>
+        <script>
+            var result = document.getElementById("myid");
+            console.log(
+                "result.firstChild.nextSibling :",
+                result.lastChild.nextSibling
+            );
+            console.log(
+                " result.lastChild.nextElementSibling :",
+                result.lastChild.nextElementSibling
+            );
+            console.log(
+                "result.lastElementChild.nextElementSibling :",
+                result.lastElementChild.nextElementSibling
+            );
+            console.log(
+                "result.firstElementChild.nextElementSibling :",
+                result.firstElementChild.nextElementSibling
+            );
+
+            result.firstElementChild.nextElementSibling.textContent =
+                "I am Learning DOM";
+        </script>
+    </body>
+</html>

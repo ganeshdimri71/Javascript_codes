@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML canvas isPointInPath() Method</title>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <body>
+        <canvas id="GFG"> </canvas>
+        <script>
+            var doc_id = document.getElementById("GFG");
+            doc_id.width = window.innerWidth;
+            doc_id.height = window.innerHeight;
+            var context = doc_id.getContext("2d");
+            var result = document.getElementById("result");
+            context.rect(10, 10, 100, 100);
+            context.fillStyle = "green";
+            context.fill();
+            doc_id.addEventListener("mousemove", function (e) {
+                const rect = doc_id.getBoundingClientRect();
+                const x = e.clientX - rect.top;
+                const y = e.clientY - rect.left;
+                console.log("x,y", x, y);
+                result.innerText = context.isPointInPath(x, y);
+                console.log("result.innerText:", result.innerText);
+            });
+        </script>
+    </body>
+</html>

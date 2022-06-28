@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <table id="mytab" border="1">
+            <caption>
+                My Table Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="mybody">
+                <tr>
+                    <td>11</td>
+                    <td>Ganesh</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Ramesh</td>
+                    <td>BCA</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>55</td>
+                <td>Shankar</td>
+                <td>Agriculture</td>
+            </tfoot>
+        </table>
+        <table id="mytabOne" border="1">
+            <caption>
+                My Table Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="mybodyOne">
+                <tr>
+                    <td>11</td>
+                    <td>Ganesh</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Ramesh</td>
+                    <td id="mytd">BCA</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>55</td>
+                <td>Shankar</td>
+                <td>Agriculture</td>
+            </tfoot>
+        </table>
+        <table id="mytabTwo" border="1">
+            <caption>
+                My Table Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="mybodyTwo">
+                <tr>
+                    <td>11</td>
+                    <td>Ganesh</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Ramesh</td>
+                    <td id="mytdTwo">BCA</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>55</td>
+                <td>Shankar</td>
+                <td>Agriculture</td>
+            </tfoot>
+        </table>
+        <table id="mytabThree" border="1">
+            <caption>
+                My Table Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="mybodyThree">
+                <tr>
+                    <td>11</td>
+                    <td>Ganesh</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Ramesh</td>
+                    <td id="mytdThree">BCA</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>55</td>
+                <td>Shankar</td>
+                <td>Agriculture</td>
+            </tfoot>
+        </table>
+        <table id="mytabFour" border="1">
+            <caption>
+                My Table Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="mybodyFour">
+                <tr>
+                    <td>11</td>
+                    <td>Ganesh</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Ramesh</td>
+                    <td id="mytdFour">BCA</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>55</td>
+                <td>Shankar</td>
+                <td>Agriculture</td>
+            </tfoot>
+        </table>
+
+        <script>
+            var mytable = document.getElementById("mytab");
+            var myrow = mytable.rows;
+            console.log("myrow :", myrow);
+            console.log(
+                " mytable.rows[0].cells.length:",
+                myrow[0].cells.length
+            );
+            console.log(" mytable.rows[0].cells[0]:", myrow[0].cells[0]);
+            console.log(" mytable.rows[2].cells[2]:", myrow[2].cells[2]);
+            console.log(
+                " mytable.rows[2].cells.item(0):",
+                myrow[2].cells.item(0)
+            );
+
+            var mytableOne = document.getElementById("mytabOne");
+            var myrowOne = mytableOne.rows;
+            console.log(
+                `myrowOne[2].cells.namedItem("mytd"): `,
+                myrowOne[2].cells.namedItem("mytd")
+            );
+            console.log(
+                `myrowOne[2].cells.namedItem("mytd").textContent: `,
+                myrowOne[2].cells.namedItem("mytd").textContent
+            );
+            console.log(
+                `myrowOne[2].cells.namedItem("mytd").innerHTML: `,
+                myrowOne[2].cells.namedItem("mytd").innerHTML
+            );
+            console.log(
+                `myrowOne[2].cells.namedItem("mytd").innerHTML`,
+                myrowOne[2].cells.namedItem("mytd").innerHTML
+            );
+            console.log(
+                `myrowOne[2].cells[1].textContent`,
+                myrowOne[2].cells[1].textContent
+            );
+            console.log(
+                `myrowOne[2].cells[1].innerHTM`,
+                myrowOne[2].cells[1].innerHTML
+            );
+
+            myrowOne[2].cells[1].innerHTML = "GeekyShows";
+
+            var mytableTwo = document.getElementById("mytabTwo");
+            var myrowTwo = mytableTwo.rows;
+            var mycellTwo = myrowTwo[0].insertCell(3);
+            console.log("mycellTwo :", mycellTwo);
+            mycellTwo.textContent = "New Cell";
+            mycellTwo.innerHTML = "New Cell";
+
+            var mytableThree = document.getElementById("mytabThree");
+            var myrowThree = mytableThree.rows;
+            var mycellThree = myrowThree[0].insertCell(3);
+            var mycellThreeOne = myrowThree[1].insertCell(3);
+            console.log("mycellTwo :", mycellTwo);
+            mycellThree.textContent = "Fees";
+            mycellThreeOne.textContent = "10,000";
+
+            var mytableFour = document.getElementById("mytabFour");
+            var myrowFour = mytableFour.rows;
+            myrowFour[0].deleteCell(0);
+            myrowFour[1].deleteCell(0);
+        </script>
+    </body>
+</html>

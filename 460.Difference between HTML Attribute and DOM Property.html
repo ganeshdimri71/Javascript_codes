@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2 id="myh2">Hello Geekyshows</h2>
+        <p id="myp" class="myclass" title="para">Paragraph</p>
+        <script>
+            var p = document.getElementById("myp");
+            console.log(
+                "Object.prototype.toString.call(p): ",
+                Object.prototype.toString.call(p)
+            );
+            console.log("p: ", p);
+            console.log("p.id: ", p.id);
+            console.log("p.title: ", p.title);
+            console.log("p.className: ", p.className);
+            p.title = "mypara";
+            console.log("p: ", p);
+        </script>
+    </body>
+</html>

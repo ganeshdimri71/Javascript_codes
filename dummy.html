@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id="myCanvas" style="border: 1px solid #c3c3c3">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+
+        <script>
+            var myRect = { x: 300, y: 75, w: 150, h: 150, color: "red" };
+            var mySquare = { x: 1050, y: 75, w: 200, h: 150, color: "red" };
+            var c = document.getElementById("myCanvas");
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = myRect.color;
+            ctx.fillRect(myRect.x, myRect.y, myRect.w, myRect.h);
+            ctx.fillRect(mySquare.x, mySquare.y, mySquare.w, mySquare.h);
+
+            ctx.beginPath();
+            moveTo(900, 900);
+            ctx.fillStyle = "red";
+            ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+            ctx.fill();
+
+            class Circle {
+                constructor(xpoint, ypoint, radius, color) {
+                    this.xpoint = xpoint;
+                    this.ypoint = ypoint;
+                    this.radius = radius;
+                    this.color = color;
+                }
+
+                draw(ctx) {
+                    ctx.beginPath();
+                    ctx.arc(
+                        this.xpoint,
+                        this.ypoint,
+                        this.radius,
+                        0,
+                        Math.PI * 2,
+                        false
+                    );
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                changeColor(newColor) {
+                    this.color = newColor;
+                    this.draw(ctx);
+                }
+                clickCircle(xmouse, ymouse) {
+                    const distance = Math.sqrt(
+                        (xmouse - this.xpoint) * (xmouse - this.xpoint) +
+                            (ymouse - this.ypoint) * (ymouse - this.ypoint)
+                    );
+                    if (distance < this.radius) {
+                        this.changeColor("green");
+                        return true;
+                    } else {
+                        this.changeColor("red");
+                        return false;
+                    }
+                }
+            }
+
+            let circle = new Circle(750, 150, 75, "red");
+            circle.draw(ctx);
+
+            c.addEventListener(
+                "mousemove",
+                function (e) {
+                    const rect = c.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const result = circle.clickCircle(x, y);
+                    console.log("result: ", result);
+                    if (
+                        (e.clientX >= myRect.x) &
+                        (e.clientX <= myRect.x + myRect.w) &
+                        (e.clientY >= myRect.y) &
+                        (e.clientY <= myRect.y + myRect.h)
+                    ) {
+                        myRect.color = "green";
+                    } else {
+                        myRect.color = "red";
+                    }
+                    updateCanvas();
+                },
+                false
+            );
+
+            function updateCanvas() {
+                ctx.fillStyle = myRect.color;
+                ctx.fillRect(myRect.x, myRect.y, myRect.w, myRect.h);
+            }
+        </script>
+    </body>
+</html>

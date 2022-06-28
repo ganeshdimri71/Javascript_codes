@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2 id="myh2">Hello GeekyShows</h2>
+        <script>
+            var h2 = document.getElementById("myh2");
+            var result = h2.firstChild.data;
+            console.log("result: ", result);
+            h2.firstChild.data = "I am new Data";
+            console.log("h2.firstChild.data: ", h2.firstChild.data);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="myp">This is<span>Para</span><em>graph</em></p>
+        <p id="mypOne">This is<span>Para</span><em>graph</em></p>
+        <p id="mypTwo">This is<span>Para</span><em>graph</em></p>
+        <script>
+            var p = document.getElementById("myp");
+            console.log(`document.getElementById("myp") :`, p);
+            console.log(
+                `document.getElementById("myp").textContent :`,
+                p.textContent
+            );
+
+            var pOne = document.getElementById("mypOne");
+            pOne.textContent = "Hello World";
+            console.log(`document.getElementById("pOne") :`, pOne);
+
+            var pTwo = document.getElementById("mypTwo");
+            pTwo.textContent = "<h1>Hello World</h1>";
+            console.log(`document.getElementById("mypTwo") :`, pTwo);
+        </script>
+    </body>
+</html>

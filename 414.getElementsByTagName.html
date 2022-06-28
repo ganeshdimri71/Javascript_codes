@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>We are Learning JS</h1>
+        <h1>Subscribe Geekyshows</h1>
+        <h2>Now</h2>
+        <p id="geek">
+            Hello <span>Gekkyshows</span> <em>World</em> <span>Youtube</span> <b>Hello</b>
+            <h1>Hello H1</h1>
+        </p>
+        <p id="find"><span>Bye</span> Gekkyshows</p>
+        <div>
+            <p>1st p inside div</p>
+            <p>2nd p inside div</p>
+        </div>
+
+        <script>
+            var result = document.getElementsByTagName("span");
+            var resultOne = document.getElementById("geek");
+            var resultTwo = resultOne.getElementsByTagName("span");
+            var resultThree = resultOne.getElementsByTagName("*");
+            console.log("result: ", result);
+            console.log("resultOne: ", resultOne);
+            console.log("resultTwo: ", resultTwo);
+            console.log("resultThree: ", resultThree);
+        </script>
+    </body>
+</html>

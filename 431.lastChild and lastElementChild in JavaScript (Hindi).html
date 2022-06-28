@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" id="myidOne">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body id="myidOne">
+        <!-- 
+        var result = document.getElementById("myid");
+        var getAttrOne = result.attributes[0].value;
+        var length = result.attributes.length;
+        document.write(`getAttr : ${getAttr} <br>`);
+        document.write(`length : ${length} <br>`);
+         console.log("result.parentNode :", result.parentNode);
+
+         for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}  <br>`
+                );
+                console.log(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}`
+                );
+            }
+     -->
+        <div id="myid">
+            <h1>We are Learning JS</h1>
+        </div>
+        <script>
+            var result = document.getElementById("myid");
+            var newENode = document.createElement("h2");
+            console.log(" document.createElement('h2') :", newENode);
+        </script>
+    </body>
+</html>

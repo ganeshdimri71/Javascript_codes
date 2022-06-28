@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- function disp1() {
+            alert("Button Clicked1");
+        }
+        function disp2() {
+            alert("Button Clicked2");
+        }
+
+        document.getElementById("mybtn").onclick = disp1;
+        document.getElementById("mybtn").onclick = disp2; -->
+    </head>
+    <body>
+        <h1>Event Handling</h1>
+        <button id="mybtn">Click Me</button>
+        <button id="mybtnOne">Click Me</button>
+        <button id="mybtnTwo">Click Me</button>
+        <button id="mybtnThree">Click Me</button>
+        <button id="mybtnFour">Click Me</button>
+        <script>
+            function show() {
+                alert("Button Clicked");
+            }
+            var btn = document.getElementById("mybtn");
+            btn.addEventListener("click", show, false);
+            btn.addEventListener("click", show, true);
+
+            var btnOne = document.getElementById("mybtnOne");
+            btnOne.addEventListener("click", show, false);
+            btnOne.addEventListener("click", show, true);
+
+            btnOne.removeEventListener("click", show, true);
+        </script>
+    </body>
+</html>

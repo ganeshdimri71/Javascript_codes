@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #parent {
+                display: flex;
+                flex-direction: row;
+            }
+            #one {
+                width: 400px;
+                height: 400px;
+                background-color: orange;
+            }
+            #two {
+                width: 300px;
+                height: 300px;
+                background-color: lightblue;
+            }
+            #three {
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+            #four {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+            #five {
+                width: 80px;
+                height: 80px;
+                background-color: lightblue;
+            }
+            #six {
+                width: 60px;
+                height: 60px;
+                background-color: pink;
+            }
+            #seven {
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+            }
+            #eight {
+                width: 40px;
+                height: 40px;
+                background-color: lightblue;
+            }
+            #nine {
+                width: 30px;
+                height: 30px;
+                background-color: pink;
+            }
+            #ten {
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+            }
+            #eleven {
+                width: 40px;
+                height: 40px;
+                background-color: lightblue;
+            }
+            #twelve {
+                width: 30px;
+                height: 30px;
+                background-color: pink;
+            }
+            #thirteen {
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+            }
+            #fourteen {
+                width: 40px;
+                height: 40px;
+                background-color: lightblue;
+            }
+            #fifteen {
+                width: 30px;
+                height: 30px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Event Handling</h1>
+        <div id="parent">
+            <div id="one">
+                1
+                <div id="two">
+                    2
+                    <div id="three">3</div>
+                </div>
+            </div>
+            <div id="four">
+                4
+                <div id="five">
+                    5
+                    <div id="six">6</div>
+                </div>
+            </div>
+            <div id="seven">
+                7
+                <div id="eight">
+                    8
+                    <div id="nine">9</div>
+                </div>
+            </div>
+            <div id="ten">
+                10
+                <div id="eleven">
+                    11
+                    <div id="twelve">12</div>
+                </div>
+            </div>
+            <div id="thirteen">
+                13
+                <div id="fourteen">
+                    14
+                    <div id="fifteen">15</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //    Bubbling Phase
+
+            function div1(e) {
+                console.log("div1");
+                this.style.backgroundColor = "red";
+            }
+            function div2(e) {
+                console.log("div2");
+                this.style.backgroundColor = "blue";
+            }
+            function div2_2(e) {
+                console.log("div2_2");
+                this.style.width = "350px";
+            }
+            function div3(e) {
+                console.log("div3");
+                this.style.backgroundColor = "green";
+            }
+            function div4(e) {
+                console.log("div4");
+                this.style.backgroundColor = "red";
+            }
+            function div5(e) {
+                console.log("div5");
+                this.style.backgroundColor = "blue";
+            }
+            function div5_5(e) {
+                console.log("div5");
+                this.style.width = "350px";
+            }
+            function div6(e) {
+                console.log("div6");
+                this.style.backgroundColor = "green";
+                e.stopPropagation();
+            }
+
+            function div7(e) {
+                console.log("div7");
+                this.style.backgroundColor = "red";
+            }
+            function div8(e) {
+                console.log("div8");
+                this.style.backgroundColor = "blue";
+            }
+            function div8_8(e) {
+                console.log("div8");
+                this.style.width = "350px";
+                e.stopPropagation();
+            }
+            function div9(e) {
+                console.log("div9");
+                this.style.backgroundColor = "green";
+            }
+
+            function div10(e) {
+                console.log("div10");
+                this.style.backgroundColor = "red";
+            }
+            function div11(e) {
+                console.log("div11");
+                this.style.backgroundColor = "blue";
+            }
+            function div11_11(e) {
+                console.log("div11_11");
+                this.style.width = "350px";
+                e.stopPropagation();
+            }
+            function div12(e) {
+                console.log("div12");
+                this.style.backgroundColor = "green";
+            }
+
+            function div13(e) {
+                console.log("div13");
+                this.style.backgroundColor = "red";
+            }
+            function div14(e) {
+                console.log("div14");
+                this.style.backgroundColor = "blue";
+                e.stopImmediatePropagation();
+            }
+            function div14_14(e) {
+                console.log("div14_14");
+                this.style.width = "350px";
+                e.stopPropagation();
+            }
+            function div15(e) {
+                console.log("div15");
+                this.style.backgroundColor = "green";
+            }
+
+            var divOne = document.getElementById("one");
+            var divTwo = document.getElementById("two");
+            var divThree = document.getElementById("three");
+            divOne.addEventListener("click", div1, false);
+            divTwo.addEventListener("click", div2, false);
+            divTwo.addEventListener("click", div2_2, false);
+            divThree.addEventListener("click", div3, false);
+
+            var divFour = document.getElementById("four");
+            var divFive = document.getElementById("five");
+            var divSix = document.getElementById("six");
+            divFour.addEventListener("click", div4, false);
+            divFive.addEventListener("click", div5, false);
+            divFive.addEventListener("click", div5_5, false);
+            divSix.addEventListener("click", div6, false);
+
+            var divSeven = document.getElementById("seven");
+            var divEight = document.getElementById("eight");
+            var divNine = document.getElementById("nine");
+            divSeven.addEventListener("click", div7, false);
+            divEight.addEventListener("click", div8, false);
+            divEight.addEventListener("click", div8_8, false);
+            divNine.addEventListener("click", div9, false);
+
+            var divTen = document.getElementById("ten");
+            var divEleven = document.getElementById("eleven");
+            var divTwelve = document.getElementById("twelve");
+            divTen.addEventListener("click", div10, false);
+            divEleven.addEventListener("click", div11, false);
+            divEleven.addEventListener("click", div11_11, false);
+            divTwelve.addEventListener("click", div12, false);
+
+            var divThirteen = document.getElementById("thirteen");
+            var divFourteen = document.getElementById("fourteen");
+            var divFifteen = document.getElementById("fifteen");
+            divThirteen.addEventListener("click", div13, false);
+            divFourteen.addEventListener("click", div14, false);
+            divFourteen.addEventListener("click", div14_14, false);
+            divFifteen.addEventListener("click", div15, false);
+        </script>
+    </body>
+</html>

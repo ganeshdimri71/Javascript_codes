@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function test() {
+                return "Hello";
+                console.log();
+            }
+            console.log("test(): ", test());
+
+            async function testOne() {
+                return "Hello";
+            }
+            console.log("testOne(): ", testOne());
+
+            async function testTwo() {
+                return "Hello";
+            }
+            testTwo().then((result) => {
+                console.log("result: ", result);
+            });
+
+            let testThree = async function () {
+                return "Hello";
+            };
+            testThree().then((result) => {
+                console.log("result: ", result);
+            });
+
+            async function testFour() {
+                console.log("2 : Message");
+                console.log("3 : Message");
+                console.log("4 : Message");
+            }
+            console.log("1 : Message");
+            testFour();
+            console.log("5 : Message");
+
+            async function testFive() {
+                console.log("2 : Message");
+                const response = await fetch("student_data.json");
+                console.log("3 : Message");
+                const students = await response.json();
+                return students;
+            }
+            console.log("1 : Message");
+            let a = testFive();
+            console.log("4 : Message");
+            console.log("a: ", a);
+
+            async function testSix() {
+                const response = await fetch("student_data.json");
+                const students = await response.json();
+                return students;
+            }
+            testSix()
+                .then((response) => {
+                    console.log("response: ", response);
+                })
+                .catch((error) => {
+                    console.log("error: ", error);
+                });
+
+            async function testSeven() {
+                const response = await fetch("student_data.json");
+                const students = await response1.json();
+                return students;
+            }
+            testSeven()
+                .then((response) => {
+                    console.log("response: ", response);
+                })
+                .catch((error) => {
+                    console.log("error: ", error);
+                });
+
+            async function testEight() {
+                return (await fetch("student_data.json")).json();
+            }
+            testEight()
+                .then((response) => {
+                    console.log("response: ", response);
+                })
+                .catch((error) => {
+                    console.log("error: ", error);
+                });
+
+            async function testNine() {
+                try {
+                    const response = await fetch("student_data.json");
+                    const students = await response.json();
+                    return students;
+                } catch (error) {
+                    console.log("error: ", error);
+                }
+            }
+            testNine().then((response) => {
+                console.log("response: ", response);
+            });
+
+            async function testTen() {
+                try {
+                    const response = await fetch("student_data.json");
+                    const students = await response1.json();
+                    return students;
+                } catch (error) {
+                    console.log("error: ", error);
+                }
+            }
+            testTen().then((response) => {
+                console.log("response: ", response);
+            });
+        </script>
+    </body>
+</html>

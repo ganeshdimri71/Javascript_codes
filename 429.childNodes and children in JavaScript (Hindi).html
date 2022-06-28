@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" id="myidOne">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body id="myidOne">
+        <!-- 
+        var result = document.getElementById("myid");
+        var getAttrOne = result.attributes[0].value;
+        var length = result.attributes.length;
+        document.write(`getAttr : ${getAttr} <br>`);
+        document.write(`length : ${length} <br>`);
+         console.log("result.parentNode :", result.parentNode);
+
+         for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}  <br>`
+                );
+                console.log(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}`
+                );
+            }
+     -->
+        <h1 class="myclass" id="myid">
+            <!--This is a Comment -->
+            <span> We are Learning JS</span>
+            <em>Hello</em>
+        </h1>
+        <p id="myid1">I am Paragraph</p>
+        <p id="myid2"><span>I am a Span element</span> I am Paragraph</p>
+        <script>
+            var result = document.getElementById("myidOne");
+            var resultOne = document.getElementById("myid");
+            var resultTwo = document.getElementById("myid2");
+            var length = resultOne.childNodes.length;
+            var lengthOne = resultOne.childNodes.length;
+            var lengthTwo = resultOne.children.length;
+            console.log("result.childNodes :", result.childNodes);
+            console.log("resultOne.childNodes :", resultOne.childNodes);
+            console.log("result.children :", result.children);
+            console.log("result.children :", resultOne.children);
+            console.log("resultTwo.children :", resultTwo.childNodes);
+            console.log("resultTwo.children :", resultTwo.children);
+            console.log("resultOne.childNodes.length :", length);
+            console.log("resultOne.children.length :", lengthOne);
+
+            for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}  <br>`
+                );
+                console.log(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}`
+                );
+            }
+
+            document.write(`************************* <br>`);
+            console.log(`************************* `);
+
+            for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i].textContent = ${resultOne.childNodes[i].textContent}  <br>`
+                );
+            }
+
+            document.write(`************************* <br>`);
+
+            for (let i = 0; i < lengthTwo; i++) {
+                document.write(
+                    `result.children[i] = ${resultOne.children[i]}  <br>`
+                );
+                console.log(`result.children[i] = ${resultOne.children[i]}`);
+            }
+
+            resultOne.children[0].textContent = "My Name is Ganesh Dimri";
+            resultOne.childNodes[0].textContent = "My Name is Ganesh Dimri One";
+        </script>
+    </body>
+</html>

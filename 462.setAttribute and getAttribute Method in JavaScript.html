@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <p
+                id="myp"
+                class="myclass"
+                style="background-color: red; font-size: 80px"
+            >
+                Hello Paragraph
+            </p>
+            <p
+                id="mypOne"
+                class="myclassOne"
+                style="background-color: red; font-size: 80px"
+            >
+                Hello Paragraph
+            </p>
+        </div>
+        <script>
+            var p = document.getElementById("myp");
+            console.log("p: ", p);
+            p.setAttribute("class", `myclassgeekyshows`);
+            console.log("p: ", p);
+
+            var pOne = document.getElementById("mypOne");
+            console.log("pOne: ", pOne);
+            pOne.className = "myclassgeekyshows";
+            console.log("pOne: ", pOne);
+
+            var getAt = p.getAttribute("id");
+            console.log("getAt: ", getAt);
+            console.log("pOne.id: ", pOne.id);
+
+            p.setAttribute("title", "mytitle");
+            p.setAttribute("style", "font-style:italic");
+            console.log("p: ", p);
+
+            pOne.style.fontStyle = "italic";
+        </script>
+    </body>
+</html>

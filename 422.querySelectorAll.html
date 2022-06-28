@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title class="geek">Document</title>
+    </head>
+    <body>
+        <h1>We are Learning JS</h1>
+        <h1 class="geek myclass">Subscribe Geekyshows</h1>
+        <h2>Now</h2>
+        <p class="geek">
+            Hello <span>Gekkyshows</span> <em>World</em> <span>Youtube</span> <b>Hello</b>
+            <h1>Hello H1</h1>
+        </p>
+        <p class="myclass"><span>Bye</span> Gekkyshows</p>
+        <div id="show">
+            <p>1st p inside div</p>
+            <p class="geek">2nd p inside div</p>
+        </div>
+        <p id="show1">I am Paragraph</p>
+        <div id="show2">I am Something Div</div>
+        <div>Hello My name is div</div>
+
+        <script>
+            var result = document.querySelectorAll("p");
+            var resultOne = document.querySelectorAll('p, h1')
+            var resultTwo = document.querySelectorAll("p, h1,#show2")
+            var resultThree = document.querySelector("#show1")
+            var resultThree = document.querySelectorAll("#show1,#show")
+            var resultFour = document.querySelectorAll(".geek")
+            var resultFive = document.querySelectorAll(".geek,.myclass")
+            var resultSix = document.querySelectorAll("div[id]")
+            var resultSeven = document.querySelectorAll("div[id='show']")
+            console.log("result: ", result);
+            console.log("resultOne: ", resultOne);
+            console.log("resultTwo: ", resultTwo);
+            console.log("resultThree: ", resultThree);
+            console.log("resultFour: ", resultFour);
+            console.log("resultFive: ", resultFive);
+            console.log("resultSix: ", resultSix);
+            console.log("resultSeven: ", resultSeven);
+        </script>
+    </body>
+</html>

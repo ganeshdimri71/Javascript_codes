@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 title="myheading">Heading 1</h1>
+        <img
+            src="https://th.bing.com/th/id/R.41ec5c9ca2e897c49a0ab68e333da8e8?rik=dsYPYiGysjyoNA&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f04%2fcat1.jpg&ehk=GTCh9L6QOJd5t7FK13U8fi4c4z%2bqjD05seLLFGiHa1g%3d&risl=&pid=ImgRaw&r=0"
+            alt="catimage"
+            width="30%"
+            height="20%"
+        />
+        <img
+            src="https://seeklogo.com/images/J/java-script-js-logo-ACF4AE5082-seeklogo.com.png"
+            alt="jsimage"
+            width="30%"
+            height="20%"
+        />
+        <div id="mydiv">
+            <ul id="myl">
+                <li class="game">Item 1</li>
+                <li class="supergame">Item2</li>
+                <li class="game-super">Item 3</li>
+                <li class="gamesuper">Item 4</li>
+                <li class="super-game">Item5</li>
+                <li class="game super">Item 6</li>
+                <li class="super game">Item7</li>
+            </ul>
+            <ul id="mylist">
+                <li>PHP</li>
+                <li>JS</li>
+                <li>PHP</li>
+                <li>HTML</li>
+            </ul>
+        </div>
+        <p class="red black" title="mypara1">This is paragraph 1</p>
+        <p class="red" title="mypara2">This is paragraph 2</p>
+        <p class="black" title="mypara3">This is Paragraph 3</p>
+        <p title="mypara4" id="book">This is Paragraph 4</p>
+        <p>This is Paragraph 5</p>
+        <h3 class="red">Heading 3</h3>
+        <h4 id="book">Heading 3</h4>
+
+        <script>
+            // Element Selector
+            var list = document.querySelectorAll("p");
+            console.log(`document.querySelectorAll("p") :`, list);
+            console.log(
+                `document.querySelectorAll("p").length : `,
+                list.length
+            );
+
+            //Group Selector
+
+            var listOne = document.querySelectorAll("div, p");
+            console.log(`document.querySelectorAll(div, p) :`, listOne);
+            console.log(
+                `document.querySelectorAll(div, p).length : `,
+                listOne.length
+            );
+
+            var listTwo = document.querySelectorAll("div, p, li");
+            console.log(`document.querySelectorAll(div, p,li) :`, listTwo);
+            console.log(
+                `document.querySelectorAll(div, p).length : `,
+                listTwo.length
+            );
+
+            //Universal Selector
+            var listThree = document.querySelectorAll("*");
+            console.log(`document.querySelectorAll('*') :`, listThree);
+            console.log(
+                `document.querySelectorAll(div, p).length : `,
+                listThree.length
+            );
+
+            //class Selector or Style class
+            //Universal Style class
+            var listFour = document.querySelectorAll(".game");
+            console.log(`document.querySelectorAll('game') :`, listFour);
+            console.log(
+                `document.querySelectorAll('game').length : `,
+                listFour.length
+            );
+
+            //Element Specific Style Class
+            var listFive = document.querySelectorAll("p.red");
+            console.log(`document.querySelectorAll('p.red') :`, listFive);
+            console.log(
+                `document.querySelectorAll('p.red').length : `,
+                listFive.length
+            );
+
+            //Element Specific Style Class - More Specific
+            var listSix = document.querySelectorAll("p.red.black");
+            console.log(`document.querySelectorAll('p.red.black') :`, listSix);
+            console.log(
+                `document.querySelectorAll('p.red.black').length : `,
+                listSix.length
+            );
+            var listSeven = document.getElementById("mydiv");
+            var listSeven = mydiv.querySelector("*");
+
+            //Id Selector
+            var listEight = document.querySelectorAll("#book");
+            console.log(`document.querySelectorAll('#book') :`, listEight);
+            console.log(
+                `document.querySelectorAll('#book').length : `,
+                listSix.length
+            );
+
+            var listNine = document.querySelectorAll("p#book");
+            console.log(`document.querySelectorAll('p#book') :`, listNine);
+            console.log(
+                `document.querySelectorAll('p#book').length : `,
+                listNine.length
+            );
+
+            //Attribute Selector
+
+            var listTen = document.querySelectorAll("p[title]");
+            console.log(`document.querySelectorAll('p[title]') :`, listTen);
+            console.log(
+                `document.querySelectorAll('p[title]').length : `,
+                listTen.length
+            );
+
+            var listEleven = document.querySelectorAll("p[title = 'mypara1']");
+            console.log(
+                `document.querySelectorAll('p[title = 'mypara1']') :`,
+                listEleven
+            );
+            console.log(
+                `document.querySelectorAll('p[title = 'mypara1']').length : `,
+                listEleven.length
+            );
+
+            var listTwelve = document.querySelectorAll(
+                'img[width = "30%"] [height="20%"]'
+            );
+            console.log(
+                `document.querySelectorAll('img[width = '30%'] [height='30%']') :`,
+                listTwelve
+            );
+            console.log(
+                `document.querySelectorAll('img[width = '30%'] [height = '30%'] : `,
+                listTwelve.length
+            );
+
+            var listThirteen = document.querySelectorAll('[class ~= "game"]');
+            console.log(
+                `document.querySelectorAll('[class ~= "game"]')`,
+                listThirteen
+            );
+            console.log(
+                `document.querySelectorAll('[class ~= "game"]'): `,
+                listThirteen.length
+            );
+
+            var listFourteen = document.querySelectorAll('[class |= "game"]');
+            console.log(
+                `document.querySelectorAll('[class |= "game"]')`,
+                listFourteen
+            );
+            console.log(
+                `document.querySelectorAll('[class |= "game"]'): `,
+                listFourteen.length
+            );
+
+            var listFifteen = document.querySelectorAll('[class ^= "game"]');
+            console.log(
+                `document.querySelectorAll('[class ^= "game"]')`,
+                listFifteen
+            );
+            console.log(
+                `document.querySelectorAll('[class ^= "game"]'): `,
+                listFifteen.length
+            );
+
+            var listSixteen = document.querySelectorAll('[class $= "game"]');
+            console.log(
+                `document.querySelectorAll('[class $= "game"]')`,
+                listSixteen
+            );
+            console.log(
+                `document.querySelectorAll('[class $= "game"]'): `,
+                listSixteen.length
+            );
+
+            var listSeventeen = document.querySelectorAll('[class *= "ga"]');
+            console.log(
+                `document.querySelectorAll('[class *= "ga"]')`,
+                listSeventeen
+            );
+            console.log(
+                `document.querySelectorAll('[class *= "ga"]'): `,
+                listSeventeen.length
+            );
+
+            //Pseudo Class
+            var listNineteen = document.querySelectorAll("li:first-child");
+            console.log(
+                `document.querySelectorAll('li:first-child')`,
+                listNineteen
+            );
+            console.log(
+                `document.querySelectorAll('li:first-child'): `,
+                listNineteen.length
+            );
+
+            var listTwenty = document.querySelectorAll(":first-child");
+            console.log(
+                `document.querySelectorAll(':first-child')`,
+                listTwenty
+            );
+            console.log(
+                `document.querySelectorAll(':first-child'): `,
+                listTwenty.length
+            );
+
+            var listTwentyOne = document.querySelectorAll("li:last-child");
+            console.log(
+                `document.querySelectorAll('li:last-child')`,
+                listTwentyOne
+            );
+            console.log(
+                `document.querySelectorAll('li:last-child'): `,
+                listTwentyOne.length
+            );
+
+            var listTwentyTwo = document.querySelectorAll(":last-child");
+            console.log(
+                `document.querySelectorAll(':last-child')`,
+                listTwentyTwo
+            );
+            console.log(
+                `document.querySelectorAll(':last-child'): `,
+                listTwentyTwo.length
+            );
+
+            var listTwentyThree = document.querySelectorAll("li:last-child");
+            console.log(
+                `document.querySelectorAll('li:last-child')`,
+                listTwentyThree
+            );
+            console.log(
+                `document.querySelectorAll('li:last-child'): `,
+                listTwentyThree.length
+            );
+
+            var listTwentyFour = document.querySelectorAll("li:nth-child(1)");
+            console.log(
+                `document.querySelectorAll('li:nth-child(1)')`,
+                listTwentyFour
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-child(1)'): `,
+                listTwentyFour.length
+            );
+
+            var listTwentyFive = document.querySelectorAll("li:nth-child(3)");
+            console.log(
+                `document.querySelectorAll('li:nth-child(3)')`,
+                listTwentyFive
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-child(3)'): `,
+                listTwentyFive.length
+            );
+
+            var listTwentySix = document.querySelectorAll("li:nth-child(even)");
+            console.log(
+                `document.querySelectorAll('li:nth-child(even)')`,
+                listTwentySix
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-child(even)'): `,
+                listTwentySix.length
+            );
+
+            var listTwentySeven =
+                document.querySelectorAll("li:nth-child(odd)");
+            console.log(
+                `document.querySelectorAll('li:nth-child(odd)')`,
+                listTwentySeven
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-child(odd)'): `,
+                listTwentySeven.length
+            );
+
+            var listTwentyEight = document.querySelectorAll(
+                "li:nth-last-child(1)"
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-last-child(1)')`,
+                listTwentyEight
+            );
+            console.log(
+                `document.querySelectorAll('li:nth-last-child(1)'): `,
+                listTwentyEight.length
+            );
+
+            var listTwentyNine = document.querySelectorAll(
+                ":empty"
+            );
+            console.log(
+                `document.querySelectorAll(':empty')`,
+                listTwentyNine
+            );
+            console.log(
+                `document.querySelectorAll(':empty'): `,
+                listTwentyNine.length
+            );
+        </script>
+    </body>
+</html>

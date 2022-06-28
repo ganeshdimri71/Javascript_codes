@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // There are 5 movie tickets Each Rs 200 and if you buy 5 tickets get discount Rs. 50 Each
+            // There are 5 movie tickets Each Rs 200 and if you buy less then 5 tickets get discount Rs. 0 Each
+
+            var noOfTickets = 5;
+            var buyTicket = 5;
+            var eachprice = 200;
+            var disprice = 50;
+
+            function tickets(theory, nticket, eprice, bticket, dprice) {
+                if (bticket < 5) {
+                    dprice = 0;
+                    return `${theory[0]} ${noOfTickets} ${theory[1]} ${eachprice} ${theory[2]} ${bticket} ${theory[3]} ${dprice} ${theory[3]} `;
+                } else {
+                    return `${theory[0]} ${noOfTickets} ${theory[1]} ${eachprice} ${theory[2]} ${bticket} ${theory[3]} ${dprice} ${theory[4]} `;
+                }
+            }
+            document.write(
+                tickets`There are ${noOfTickets} movie tickets Rach Rs.${eachprice} and if you buy ${buyTicket} get discount of Rs.${disprice} Each`
+            );
+        </script>
+    </body>
+</html>

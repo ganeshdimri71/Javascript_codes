@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" id="myidOne">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body id="myidOne">
+        <!-- 
+        var result = document.getElementById("myid");
+        var getAttrOne = result.attributes[0].value;
+        var length = result.attributes.length;
+        document.write(`getAttr : ${getAttr} <br>`);
+        document.write(`length : ${length} <br>`);
+         console.log("result.parentNode :", result.parentNode);
+
+         for (let i = 0; i < lengthOne; i++) {
+                document.write(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}  <br>`
+                );
+                console.log(
+                    `result.childNodes[i] = ${resultOne.childNodes[i]}`
+                );
+                       console.log(`document.getElementById("myid")= `, result);
+            }
+     -->
+        <div class="myclass" id="myid">
+            <h3>JS Framework</h3>
+            <ul id="myul">
+                <li>Jquery</li>
+                <li id="myang">Angular JS</li>
+                <li>React JS</li>
+                <li id="myd3">D3 JS</li>
+            </ul>
+            <ul>
+                <li>Java Programminf</li>
+                <li id="myc">C++ Programming</li>
+            </ul>
+        </div>
+        <script>
+            var targetNode = document.getElementById("myul");
+            var newNode = document.createElement("li");
+            newNode.textContent = "Backbone JS";
+            var refNode = document.getElementById("myang");
+            targetNode.insertBefore(newNode, refNode);
+            console.log(`targetNode`, targetNode);
+
+            var targetNode = document.getElementById("myul");
+            var moveNode = document.getElementById("myd3");
+            var refNode = document.getElementById("myang");
+            targetNode.insertBefore(moveNode, refNode);
+            console.log(`targetNode`, targetNode);
+
+            var targetNode = document.getElementById("myul");
+            var txtNode = document.createTextNode("Hello World");
+            var refNode = document.getElementById("myang");
+            targetNode.insertBefore(txtNode, refNode);
+
+            var targetNode = document.getElementById("myul");
+            var moveNode = document.getElementById("myc");
+            var refNode = document.getElementById("myang");
+            targetNode.insertBefore(moveNode, refNode);
+        </script>
+    </body>
+</html>
