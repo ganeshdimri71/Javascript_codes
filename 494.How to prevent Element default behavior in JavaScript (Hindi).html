@@ -1,70 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>Event Methods</h1>
-        <div
-            id="mydiv"
-            style="width: 200px; height: 200px; background-color: burlywood"
-        >
-            <a href="http://www.geekyshows.com" id="mylink"
-                >Click and open Geekyshos</a
-            >
-        </div>
-        <div
-            id="mydivOne"
-            style="width: 200px; height: 200px; background-color: burlywood"
-        >
-            <a href="http://www.geekyshows.com" id="mylinkOne"
-                >Click and open Geekyshos</a
-            >
-        </div>
-        <div
-            id="mydivTwo"
-            style="width: 200px; height: 200px; background-color: burlywood"
-        >
-            <a href="http://www.geekyshows.com" id="mylinkTwo"
-                >Click and open Geekyshos</a
-            >
-        </div>
-        <div
-            id="mydivThree"
-            style="width: 200px; height: 200px; background-color: burlywood"
-        >
-            <a href="http://www.geekyshows.com" id="mylinkThree"
-                >Click and open Geekyshos</a
-            >
-        </div>
-        <script>
-            var anchor = document.getElementById("mylink");
-            anchor.addEventListener("click", stopLink, false);
 
-            function stopLinkOne(e) {
-                e.preventDefault();
-            }
-            function div1(e) {
-                this.style.backgroundColor = "orange";
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
 
-            var d = document.getElementById("mydivOne");
-            var l = document.getElementById("mylinkOne");
-            d.addEventListener("click", div1, false);
-            l.addEventListener("click", stopLinkOne, false);
+<body>
+    <h1>Event Methods</h1>
+    <div id="mydiv" style="width: 200px; height: 200px; background-color: burlywood">
+        <a href="http://www.geekyshows.com" id="mylink">Click and open Geekyshos</a>
+    </div>
+    <div id="mydivOne" style="width: 200px; height: 200px; background-color: burlywood">
+        <a href="http://www.geekyshows.com" id="mylinkOne">Click and open Geekyshos</a>
+    </div>
+    <div id="mydivTwo" style="width: 200px; height: 200px; background-color: burlywood">
+        <a href="http://www.geekyshows.com" id="mylinkTwo">Click and open Geekyshos</a>
+    </div>
+    <div id="mydivThree" style="width: 200px; height: 200px; background-color: burlywood">
+        <a href="http://www.geekyshows.com" id="mylinkThree">Click and open Geekyshos</a>
+    </div>
+    <script>
+        var anchor = document.getElementById("mylink");
 
-            function stopLinkTwo(e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
+        function stopLinkOne(e) {
+            e.preventDefault();
+        }
 
-            var dTwo = document.getElementById("mydivTwo");
-            var lTwo = document.getElementById("mylinkTwo");
-            dTwo.addEventListener("click", div1, false);
-            lTwo.addEventListener("click", stopLinkTwo, false);
-        </script>
-    </body>
+        function div1(e) {
+            this.style.backgroundColor = "orange";
+        }
+
+        var d = document.getElementById("mydivOne");
+        var l = document.getElementById("mylinkOne");
+        d.addEventListener("click", div1, false);
+        l.addEventListener("click", stopLinkOne, false);
+
+        function stopLinkTwo(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        var dTwo = document.getElementById("mydivTwo");
+        var lTwo = document.getElementById("mylinkTwo");
+        dTwo.addEventListener("click", div1, false);
+        lTwo.addEventListener("click", stopLinkTwo, false);
+    </script>
+</body>
+
 </html>

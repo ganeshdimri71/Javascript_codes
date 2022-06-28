@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="openbtn">Open Window</button>
+    <button type="button" id="resizeToBtn">Resize By Window</button>
+    <button type="button" id="resizeByBtn">Resize To Window</button>
+    <script>
+        var newWindow;
+
+        function openwin() {
+            newWindow = window.open("", "newWindow", "width=300,height=300");
+            newWindow.document.write("Mein new window hu")
+        }
+
+        function resizeWinBy() {
+            newWindow.resizeBy(200, 200)
+            newWindow.focus()
+        }
+
+        function resizeWinTo() {
+            newWindow.resizeTo(200, 200)
+            newWindow.focus()
+        }
+
+        document.getElementById("openbtn").addEventListener("click", openwin)
+        document.getElementById("resizeToBtn").addEventListener("click", resizeWinBy)
+        document.getElementById("resizeByBtn").addEventListener("click", resizeWinTo)
+    </script>
+</body>
+
+</html>

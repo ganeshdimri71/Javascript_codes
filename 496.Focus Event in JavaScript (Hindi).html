@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Name <input type="text" id="mytext"> <br>
+    Name <input type="text" id="mytextOne"> <br>
+    <script>
+        var txt = document.getElementById("mytext")
+
+        function fe(e) {
+            txt.style.backgroundColor = 'orange'
+        }
+
+        function be(e) {
+            txt.style.backgroundColor = 'white'
+        }
+
+        var txtOne = document.getElementById("mytextOne")
+
+        function feIn(e) {
+            txtOne.style.backgroundColor = 'yellowgreen'
+        }
+
+        function beOut(e) {
+            txtOne.style.backgroundColor = 'white'
+        }
+        txt.addEventListener('focus', fe, false)
+        txt.addEventListener('blur', be, false)
+        txtOne.addEventListener('focusin', feIn, false)
+        txtOne.addEventListener('focusout', beOut, false)
+    </script>
+</body>
+
+</html>

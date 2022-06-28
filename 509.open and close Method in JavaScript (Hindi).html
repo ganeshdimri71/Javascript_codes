@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="close">Close New Window</button>
+    <script>
+        var newWindow = window.open('http://www.twitter.com', "_blank", "height=400,width=600")
+
+        function klose() {
+            newWindow.close()
+        }
+        document.getElementById("close").addEventListener('click', klose, false)
+    </script>
+</body>
+
+</html>

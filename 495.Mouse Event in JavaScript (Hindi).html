@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding:0">
+    <div id="parent">
+        <div id="one" style="width: 100px;height:100px;background-color:red;margin-right:10px;">
+            <div id="two" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="three" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="four" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="five" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="six" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="seven" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="eight" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="nine" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="ten" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="eleven" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twelve" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirteen" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="fourteen" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="fifteen" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="sixteen" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="seventeen" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="eighteen" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="nineteen" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twenty" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="twentyone" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twentytwo" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="twentythree" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twentyfour" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="twentyfive" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twentysix" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="twentyseven" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="twentyeight" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="twentynine" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="thirty" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirtyone" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="thirtytwo" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirtythree" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="thirtyfour" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirtyfive" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="thirtysix" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirtyseven" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="thirtyeight" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="thirtynine" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="fourty" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+        <div id="fourtyone" style="width: 100px;height:100px;background-color:red;margin-right:10px">
+            <div id="fourtytwo" style="width: 60px;height:60px;background-color:black;">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        Name <input type="text" id="mytext">
+    </div>
+
+    <script>
+        function div1(e) {
+            console.log("e.type Child : ", e.type)
+        }
+
+        function div2(e) {
+            console.log("e.type Parent : ", e.type)
+        }
+
+        var divOne = document.getElementById("one")
+        var divTwo = document.getElementById("two")
+        divTwo.addEventListener('mousedown', div1, false)
+
+        var divThree = document.getElementById("three")
+        var divFour = document.getElementById("four")
+        divFour.addEventListener('mouseup', div1, false)
+
+        var divFive = document.getElementById("five")
+        var divSix = document.getElementById("six")
+        divSix.addEventListener('mousedown', div1, false)
+        divSix.addEventListener('mouseup', div1, false)
+        divSix.addEventListener('click', div1, false)
+
+        var divSeven = document.getElementById("seven")
+        var divEight = document.getElementById("eight")
+        divEight.addEventListener('mousedown', div1, false)
+        divEight.addEventListener('mouseup', div1, false)
+        divEight.addEventListener('click', div1, false)
+        divEight.addEventListener('dblclick', div1, false)
+
+        var divNine = document.getElementById("nine")
+        var divTen = document.getElementById("ten")
+        divTen.addEventListener('mouseenter', div1, false)
+
+        var divEleven = document.getElementById("eleven")
+        var divTwelve = document.getElementById("twelve")
+        divTwelve.addEventListener('mouseleave', div1, false)
+
+        var divThirteen = document.getElementById("thirteen")
+        var divFourteen = document.getElementById("fourteen")
+        divFourteen.addEventListener('mouseenter', div1, false)
+        divFourteen.addEventListener('mouseleave', div1, false)
+
+        var divFifteen = document.getElementById("fifteen")
+        var divSixteen = document.getElementById("sixteen")
+        divSixteen.addEventListener('mouseover', div1, false)
+
+
+        var divSeventeen = document.getElementById("seventeen")
+        var divEighteen = document.getElementById("eighteen")
+        divEighteen.addEventListener('mouseout', div1, false)
+
+
+        var divNineteen = document.getElementById("nineteen")
+        var divTwenty = document.getElementById("twenty")
+        divTwenty.addEventListener('mouseover', div1, false)
+        divTwenty.addEventListener('mouseout', div1, false)
+
+        var divTwentyOne = document.getElementById("twentyone")
+        var divTwentyTwo = document.getElementById("twentytwo")
+        divTwentyTwo.addEventListener('mousemove', div1, false)
+
+        var divTwentyThree = document.getElementById("twentythree")
+        var divTwentyFour = document.getElementById("twentyfour")
+        divTwentyFour.addEventListener('mousedown', div1, false)
+        divTwentyFour.addEventListener('mouseup', div1, false)
+        divTwentyFour.addEventListener('contextmenu', div1, false)
+
+        var divTwentyFive = document.getElementById("twentyfive")
+        var divTwentySix = document.getElementById("twentysix")
+        divTwentySix.addEventListener('click', div1, false)
+        divTwentyFive.addEventListener('click', div2, false)
+
+        var divTwentySeven = document.getElementById("twentyseven")
+        var divTwentyEight = document.getElementById("twentyeight")
+        divTwentyEight.addEventListener('mousedown', div1, false)
+        divTwentySeven.addEventListener('mousedown', div2, false)
+
+        var divTwentyNne = document.getElementById("twentynine")
+        var divThirty = document.getElementById("thirty")
+        divThirty.addEventListener('mouseup', div1, false)
+        divTwentyNne.addEventListener('mouseup', div2, false)
+
+        var divThirtyOne = document.getElementById("thirtyone")
+        var divThirtyTwo = document.getElementById("thirtytwo")
+        divThirtyTwo.addEventListener('contextmenu', div1, false)
+        divThirtyOne.addEventListener('contextmenu', div2, false)
+
+        var divThirtyThree = document.getElementById("thirtythree")
+        var divTwentyFour = document.getElementById("thirtyfour")
+        divTwentyFour.addEventListener('mousemove', div1, false)
+        divThirtyThree.addEventListener('mousemove', div2, false)
+
+        var divThirtyFive = document.getElementById("thirtyfive")
+        var divThirtySix = document.getElementById("thirtysix")
+        divThirtySix.addEventListener('mouseenter', div1, false)
+        divThirtyFive.addEventListener('mouseenter', div2, false)
+
+        var divThirtySeven = document.getElementById("thirtyseven")
+        var divThirtyEight = document.getElementById("thirtyeight")
+        divThirtyEight.addEventListener('mouseleave', div1, false)
+        divThirtySeven.addEventListener('mouseleave', div2, false)
+
+        var divThirtyNine = document.getElementById("thirtynine")
+        var divFourty = document.getElementById("fourty")
+        divFourty.addEventListener('mouseover', div1, false)
+        divThirtyNine.addEventListener('mouseover', div2, false)
+
+        var divFourtyOne = document.getElementById("fourtyone")
+        var divFourtyTwo = document.getElementById("fourtytwo")
+        divFourtyTwo.addEventListener('mouseout', div1, false)
+        divFourtyOne.addEventListener('mouseout', div2, false)
+
+        var txt = document.getElementById("mytext")
+
+        function changeColorOrange(e) {
+            txt.style.backgroundColor = 'orange'
+        }
+
+        function changeColorWhite(e) {
+            txt.style.backgroundColor = 'white'
+        }
+
+        txt.addEventListener('mouseover', changeColorOrange)
+        txt.addEventListener('mouseout', changeColorWhite)
+    </script>
+</body>
+
+</html>
