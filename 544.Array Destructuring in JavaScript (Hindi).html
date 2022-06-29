@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var a = ["Javascript", "SixMonths", "GeekyShows"];
+            console.log("a[0]: ", a[0]);
+            console.log("a[1]: ", a[1]);
+            console.log("a[2]: ", a[2]);
+
+            var courseName = a[0];
+            var duration = a[1];
+            var tutor = a[2];
+            console.log(
+                "courseName = ",
+                courseName,
+                "duration = ",
+                duration,
+                "tutor = ",
+                tutor
+            );
+
+            var aOne = ["Javascript", "SixMonths", "GeekyShows"];
+            var [courseNameOne, durationOne, tutorOne] = aOne;
+            console.log(
+                "courseNameOne = ",
+                courseNameOne,
+                "durationOne = ",
+                durationOne,
+                "tutorOne = ",
+                tutorOne
+            );
+
+            var aTwo = ["Javascript", "SixMonths", "GeekyShows"];
+            var [courseNameTwo, durationTwo] = aTwo;
+            console.log(
+                "courseNameTwo = ",
+                courseNameTwo,
+                "durationTwo = ",
+                durationTwo
+            );
+
+            var aThree = ["Javascript", "SixMonths", "GeekyShows"];
+            var [courseNameThree, , tutorThree] = aThree;
+            console.log(
+                "courseNameThree = ",
+                courseNameThree,
+                "tutorThree = ",
+                tutorThree
+            );
+
+            var a, b;
+            [a, b] = [10, 20];
+            console.log("a: ", a, "b: ", b);
+
+            var aOne, bOne;
+            [aOne, bOne = 20] = [10];
+            console.log("aOne: ", aOne, "bOne: ", bOne);
+
+            var aTwo, bTwo;
+            [aTwo, bTwo = 20] = [10, 40];
+            console.log("aTwo: ", aTwo, "bTwo: ", bTwo);
+
+            var arr = [10, 20, 30];
+            function show(a) {
+                console.log("a[0]: ", a[0]);
+                console.log("a[1]: ", a[1]);
+                console.log("a[2]: ", a[2]);
+            }
+
+            show(arr);
+
+            var arr = [10, 20, 30];
+            function showOne([value1, value2, value3]) {
+                console.log("value1: ", value1);
+                console.log("value2: ", value2);
+                console.log("value3: ", value3);
+            }
+
+            showOne(arr);
+
+            var arr = [10, 20, 30, 40, 50, 60];
+            function showOne([value1, value2, value3, ...rest]) {
+                console.log("value1: ", value1);
+                console.log("value2: ", value2);
+                console.log("value3: ", value3);
+                console.log("rest: ", rest);
+            }
+
+            showOne(arr);
+
+            var arr = [10, 20, 30];
+            function showTwo(z) {
+                return z;
+            }
+            var x = showTwo(arr);
+            console.log("x: ", x);
+            console.log("x[0]: ", x[0]);
+            console.log("x[1]: ", x[1]);
+            console.log("x[2]: ", x[2]);
+
+            var [value1, value2, value3] = x;
+            console.log("value1: ", value1);
+            console.log("value2: ", value2);
+            console.log("value3: ", value3);
+
+            var [value1, value2, value3] = showTwo(arr);
+            console.log("value1: ", value1);
+            console.log("value2: ", value2);
+            console.log("value3: ", value3);
+
+            var aThree = [
+                "Javascript",
+                "SixMonths",
+                "GeekyShows",
+                ["Rahul", "Sonam"],
+            ];
+
+            var [courseName, duration, tutor, [stu1, stu2]] = aThree;
+            console.log("aThree[0]: ", aThree[0]);
+            console.log("aThree[1]: ", aThree[1]);
+            console.log("aThree[2]: ", aThree[2]);
+            console.log("aThree[3][0]: ", aThree[3][0]);
+            console.log("aThree[3][1]: ", aThree[3][1]);
+            console.log(
+                "courseName = ",
+                courseName,
+                "duration = ",
+                duration,
+                "tutor = ",
+                tutor,
+                "stu1 = ",
+                stu1,
+                "stu2 = ",
+                stu2
+            );
+        </script>
+    </body>
+</html>

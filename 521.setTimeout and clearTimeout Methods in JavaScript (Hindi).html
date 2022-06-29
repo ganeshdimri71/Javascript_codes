@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="myp">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+            reiciendis recusandae facilis delectus nesciunt magni, beatae
+            deleniti, quo perferendis debitis inventore repellendus impedit
+            excepturi eius expedita sint odit fugiat natus!
+        </p>
+        <p id="mypOne">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+            reiciendis recusandae facilis delectus nesciunt magni, beatae
+            deleniti, quo perferendis debitis inventore repellendus impedit
+            excepturi eius expedita sint odit fugiat natus!
+        </p>
+        <p id="mypTwo">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+            reiciendis recusandae facilis delectus nesciunt magni, beatae
+            deleniti, quo perferendis debitis inventore repellendus impedit
+            excepturi eius expedita sint odit fugiat natus!
+        </p>
+        <p id="mypThree">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+            reiciendis recusandae facilis delectus nesciunt magni, beatae
+            deleniti, quo perferendis debitis inventore repellendus impedit
+            excepturi eius expedita sint odit fugiat natus!
+        </p>
+        <button type="button" id="mybtn">Clear Timeout</button>
+        <script>
+            function changeCSS() {
+                document.getElementById("myp").style = "color:red";
+            }
+
+            const timeInterval = setTimeout(changeCSS, 2000);
+            console.log("timeInterval: ", timeInterval);
+
+            const timeIntervalOne = setTimeout(function () {
+                document.getElementById("mypOne").style = "color:red";
+            }, 2000);
+
+            const timeIntervalTwo = setTimeout(() => {
+                document.getElementById("mypTwo").style = "color:red";
+            }, 2000);
+
+            const timeIntervalThree = setTimeout(() => {
+                document.getElementById("mypThree").style = "color:red";
+            }, 5000);
+
+            function clrtime() {
+                clearTimeout(timeIntervalThree);
+            }
+            document.getElementById("mybtn").addEventListener("click", clrtime);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            try {
+                add();
+                document.write("Skipped Code <br>");
+            } catch (error) {
+                console.log("error Message: ", error.message);
+                console.log("error Name: ", error.name);
+                console.log("error Stack: ", error.stack);
+            }
+            try {
+                add();
+                document.write("Skipped Code");
+            } catch (error) {
+                document.write("Function defined nahi h <br>");
+            }
+            try {
+                add();
+                document.write("Skipped Code");
+            } catch (error) {
+                document.write("Function defined nahi h <br>");
+            } finally {
+                document.write(
+                    "Get executed whether there is exception or not <br>"
+                );
+            }
+            try {
+                document.write("Skipped Code <br>");
+            } catch (error) {
+                document.write("Function defined nahi h <br>");
+            } finally {
+                document.write(
+                    "Get executed whether there is exception or not"
+                );
+            }
+
+            function getRectArea(w, h) {
+                if (isNaN(w) || isNaN(h)) {
+                    throw "<br>Parameter is not a number!";
+                }
+            }
+
+            try {
+                getRectArea(10, "A");
+            } catch (e) {
+                document.write(e);
+            }
+            document.write("<br><br>I have no idea what is going above");
+        </script>
+    </body>
+</html>

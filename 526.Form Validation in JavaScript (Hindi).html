@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" name="myform">
+            Username: <input type="text" name="u_field" /> <br /><br />
+            <input type="submit" name="sbtn" value="Submit" />
+        </form>
+        <form action="" name="myformOne">
+            Username: <input type="text" name="u_fieldOne" />
+            <small id="u_small"></small> <br /><br />
+            <input type="submit" name="sbtnOne" value="Submit" />
+        </form>
+
+        <script>
+            function validateData() {
+                var ptrn = /^([^0-9\W]*)$/;
+                if (ptrn.test(document.myform.u_field.value)) {
+                    document.myform.u_field.style.backgroundColor = "green";
+                } else {
+                    document.myform.u_field.style.backgroundColor = "red";
+                }
+            }
+            document.myform.u_field.addEventListener("keyup", validateData);
+
+            function validateDataOne() {
+                console.log(
+                    "document.myformOne.u_fieldOne.value: ",
+                    document.myformOne.u_fieldOne.value
+                );
+                var ptrn = /^([^0-9\W]*)$/;
+                if (
+                    ptrn.test(document.myformOne.u_fieldOne.value) &&
+                    document.myformOne.u_fieldOne.value !== ""
+                ) {
+                    document.getElementById("u_small").textContent =
+                        "User is Valid";
+                    document.getElementById("u_small").style.color = "green";
+                } else if (document.myformOne.u_fieldOne.value === "") {
+                    document.getElementById("u_small").textContent =
+                        "User is Invalid";
+                    document.getElementById("u_small").style.color = "red";
+                } else {
+                    document.getElementById("u_small").textContent =
+                        "User is Invalid";
+                    document.getElementById("u_small").style.color = "red";
+                }
+            }
+            document.myformOne.u_fieldOne.addEventListener(
+                "keyup",
+                validateDataOne
+            );
+        </script>
+    </body>
+</html>

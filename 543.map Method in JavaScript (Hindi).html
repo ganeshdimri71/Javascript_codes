@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var arr = [10, 20, 30, 40, 50];
+            var newArr = arr.map(function (value, index, array) {
+                console.log("value: ", value);
+                console.log("index: ", index);
+                console.log("array: ", array);
+            });
+
+            var arrOne = [10, 20, 30, 40, 50];
+            var newArrOne = arrOne.map(function (value, index, array) {
+                value++;
+                console.log("value: ", value);
+            });
+
+            var arrTwo = [10, 20, 30, 40, 50];
+            var newArrTwo = arrTwo.map(function (value, index, array) {
+                value++;
+                return value;
+            });
+            console.log("newArrTwo: ", newArrTwo);
+
+            var arrThree = [
+                { price: "100", product: "Mobile" },
+                { price: "200", product: "Laptop" },
+                { price: "300", product: "Mc" },
+                { price: "400", product: "PC" },
+            ];
+
+            arrThree.map(function (value) {
+                console.log("value: ", value);
+            });
+
+            arrThree.map(function (value) {
+                console.log("value.price: ", value.price);
+            });
+
+            var newArrThree = arrThree.map(function (value) {
+                return value.price;
+            });
+            console.log("newArrThree: ", newArrThree);
+
+            var newArrFour = arrThree.map(function (value) {
+                return value.product;
+            });
+            console.log("newArrFour: ", newArrFour);
+
+            var newArrFive = arrThree.map((value) => value.product);
+            console.log("newArrFive: ", newArrFive);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script></script>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" name="myform" id="myformid">
+            Username:
+            <input
+                type="text"
+                name="m_username_field"
+                id="username_id"
+            /><br /><br />
+            Password:
+            <input type="password" name="m_password_field" id="password_id" />
+            <br /><br />
+            <input type="submit" name="m_sbtn" value="Submit" /><br /><br />
+        </form>
+        <hr />
+        <hr />
+        <form action="" name="yourform" id="yourformid">
+            Username:
+            <input
+                type="text"
+                name="y_username_field"
+                id="y_username"
+            /><br /><br />
+            Password:
+            <input type="password" name="y_password_field" /><br /><br />
+            <input type="submit" name="y_sbtn" value="Submit" /><br /><br />
+        </form>
+        <hr />
+        <hr />
+        <form action="" name="yourformOne" id="yourformidOne">
+            Username:
+            <input
+                type="text"
+                name="y_username_fieldOne"
+                id="y_usernameOne"
+                value="Rahul"
+            /><br /><br />
+            Password:
+            <input type="password" name="y_password_fieldOne" /><br /><br />
+            <input type="submit" name="y_sbtnOne" value="Submit" /><br /><br />
+        </form>
+        <hr />
+        <hr />
+        <form action="" name="yourformTwo" id="yourformidTwo">
+            Username:
+            <input
+                type="text"
+                name="y_username_fieldTwo"
+                id="y_usernameTwo"
+            /><br /><br />
+            Password:
+            <input type="password" name="y_password_fieldTwo" /><br /><br />
+            <input type="submit" name="y_sbtnOne" value="Submit" /><br /><br />
+        </form>
+        <script>
+            var usrname = document.getElementById("username_id");
+            console.log("usrname: ", usrname);
+            console.log("usrname.name: ", usrname.name);
+            console.log("usrname.id: ", usrname.id);
+            console.log("usrname.type: ", usrname.type);
+
+            // With Element Index No
+            var usrnameOne = document.yourform.elements[0];
+            var usrnameTwo = document.yourform.elements[1];
+            var usrnameThree = document.yourform.elements[2];
+            console.log("document.myourform.elements[0] : ", usrnameOne);
+            console.log("document.yourform.elements[1] : ", usrnameTwo);
+            console.log("document.yourform.elements[2] : ", usrnameThree);
+
+            console.log("document.myourform.elements[0] : ", usrnameOne);
+            console.log(
+                "document.myourform.elements[0].name : ",
+                usrnameOne.name
+            );
+            console.log(
+                "document.myourform.elements[0].type : ",
+                usrnameOne.type
+            );
+            console.log("document.myourform.elements[0].id : ", usrnameOne.id);
+
+            // Name Attribute Value
+            var usrnameFour = document.yourform.elements["y_username_field"];
+            console.log(
+                " document.yourform.elements['y_username_field'] : ",
+                usrnameFour
+            );
+            console.log(
+                " document.yourform.elements['y_username_field'].name : ",
+                usrnameFour.name
+            );
+            console.log(
+                "document.yourform.elements['y_username_field'] .type : ",
+                usrnameFour.type
+            );
+            console.log(
+                "document.yourform.elements['y_username_field'] .id : ",
+                usrnameFour.id
+            );
+
+            var usrnameFive = document.yourform.y_username_field;
+            console.log(" document.yourform.y_username_field : ", usrnameFive);
+            console.log(
+                " document.yourform.y_username_field.name : ",
+                usrnameFive.name
+            );
+            console.log(
+                "document.yourform.y_username_field  .type : ",
+                usrnameFive.type
+            );
+            console.log(
+                "document.yourform.y_username_field  .id : ",
+                usrnameFive.id
+            );
+
+            var usrnameSix = document.yourform.y_username_field;
+            console.log(" document.yourform.y_username_field : ", usrnameFive);
+            console.log(
+                " document.yourform.y_username_field.name : ",
+                usrnameFive.name
+            );
+            console.log(
+                "document.yourform.y_username_field  .type : ",
+                usrnameFive.type
+            );
+            console.log(
+                "document.yourform.y_username_field  .id : ",
+                usrnameFive.id
+            );
+
+            var usrnameSix = document.yourform.y_username;
+            console.log("document.yourform.y_username : ", usrnameSix);
+            console.log(
+                "document.yourform.y_username .name : ",
+                usrnameSix.name
+            );
+            console.log(
+                "document.yourform.y_username_field.type : ",
+                usrnameSix.type
+            );
+            console.log(
+                "document.yourform.y_username_field.id : ",
+                usrnameSix.id
+            );
+
+            var usrnameSeven = document.yourformOne.y_usernameOne;
+            console.log(
+                "document.yourform.y_usernameOne.value: ",
+                usrnameSeven.value
+            );
+
+            var usrnameEight = document.yourformTwo.y_usernameTwo;
+            usrnameEight.value = "Rohit";
+        </script>
+    </body>
+</html>

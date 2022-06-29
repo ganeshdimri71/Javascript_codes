@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function show() {
+                console.log("I am show function");
+            }
+
+            function geeky(callback) {
+                callback();
+            }
+
+            geeky(show);
+
+            function showOne(a) {
+                console.log("I am showOne function", a);
+            }
+
+            function geekyOne(callback) {
+                var a = 101;
+                callback(a);
+            }
+
+            geekyOne(showOne);
+
+            function showTwo(a) {
+                console.log("I am showTwo function", a);
+            }
+
+            function geekyTwo(a, callback) {
+                callback(a);
+            }
+
+            geekyTwo(101, showTwo);
+
+            function geekyThree(callback) {
+                var a = 101;
+                callback(a);
+            }
+
+            geekyThree(function showThree(a) {
+                console.log("I am showThree function", a);
+            });
+
+            function geekyFour(callback) {
+                var a = 101;
+                callback(a);
+            }
+
+            geekyFour(function (a) {
+                console.log("I am showFour function", a);
+            });
+
+            function geekyFive(callback) {
+                var a = 101;
+                callback(a);
+            }
+
+            geekyFive((a) => console.log("I am showFive function", a));
+
+            function showSix(a) {
+                console.log("I am showSix function", a);
+            }
+            function geekySix(callback) {
+                var a = 101;
+                callback(a);
+            }
+
+            geekySix(showSix);
+            console.log("End");
+
+            setTimeout(function showSeven() {
+                console.log("I am showSeven Function...!");
+            }, 5000);
+            console.log("setTimeout End");
+        </script>
+    </body>
+</html>
