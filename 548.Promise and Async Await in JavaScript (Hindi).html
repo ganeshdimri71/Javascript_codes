@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function myfun() {
+            console.log("Inside Function...!")
+        }
+        console.log("Start")
+        myfun()
+        console.log("End")
+        console.log("***************")
+
+        console.log("Start")
+        setTimeout(() => {
+            console.log("Inside Set Timeout")
+        }, 2000)
+        myfun()
+        console.log("End")
+
+        console.log("Start")
+        const roll = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        roll.forEach((r) => console.log("r: ", r))
+        console.log("End")
+        console.log("***************")
+
+        console.log("Start")
+
+        function getName(name) {
+            setTimeout(() => {
+                console.log("Inside set Time out One")
+                return name;
+            }, 2000)
+        }
+
+        const nm = getName("Sonam")
+        console.log("nm : ", nm)
+        console.log("End")
+        console.log("***************")
+
+        console.log("StartOne")
+
+        function getNameOne(name, callback) {
+            setTimeout(() => {
+                console.log("Inside set Time out One getNameOne")
+                callback(name);
+            }, 2000)
+        }
+
+        getNameOne("Sonam", (nmOne) => {
+            console.log("nmOne : ", nmOne)
+        })
+
+        console.log("EndOne")
+        console.log("***************")
+
+        function getNameTwo(name, callback) {
+            setTimeout(() => {
+                console.log("Inside set Time out One getNameTwo")
+                callback(name);
+            }, 6000)
+        }
+
+        function getHobbiesOne(name, callback) {
+            setTimeout(() => {
+                console.log("Inside set Time out One getNameTwo Hobbies")
+                callback(['Cricket', 'Readnig', 'Dancing']);
+            }, 1000)
+        }
+
+        getNameTwo("Sonam", (nmTwo) => {
+            console.log("nmTwo : ", nmTwo);
+            getHobbiesOne(nmTwo, (hobby) => {
+                console.log("hobby: ", hobby)
+            })
+        })
+
+        console.log("EndTwo")
+        console.log("***************")
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var course = {
+            courseName: 'Javascript',
+            duration: '6 Months',
+            tutor: 'Geekyshows'
+        }
+        console.log("course.courseName: ", course.courseName)
+        console.log("course.duration: ", course.duration)
+        console.log("course.tutor: ", course.tutor)
+
+        c = course.courseName
+        d = course.duration
+        t = course.tutor
+        console.log("c: ", c)
+        console.log("d: ", d)
+        console.log("t: ", t)
+
+        var {
+            courseName,
+            duration,
+            tutor
+        } = course
+        console.log("courseName: ", courseName)
+        console.log("duration: ", duration)
+        console.log("tutor: ", tutor)
+        var {
+            courseName: cname,
+            duration: time,
+            tutor: teacher
+        } = course
+        console.log("cname: ", cname)
+        console.log("time: ", time)
+        console.log("teacher: ", teacher)
+
+        var {
+            courseName: cname,
+            duration: time,
+        } = course
+        console.log("courseName: ", courseName)
+        console.log("duration: ", duration)
+
+        var a, b;
+        ({
+            a,
+            b
+        } = {
+            a: 10,
+            b: 20
+        })
+        console.log("a: ", a)
+        console.log("b: ", b)
+
+        var {
+            a,
+            b = 20
+        } = {
+            a: 10
+        }
+        console.log("a: ", a)
+        console.log("b: ", b)
+
+        var {
+            a = 40, b = 20
+        } = {
+            a: 10
+        }
+        console.log("a: ", a)
+        console.log("b: ", b)
+
+        var {
+            a: y = 40,
+            b: z = 20
+        } = {
+            a: 10
+        }
+        console.log("y: ", y)
+        console.log("z: ", z)
+
+        var {
+            a: y = 40,
+            z = 20
+        } = {
+            a: 10
+        }
+        console.log("y: ", y)
+        console.log("z: ", z)
+
+
+        var course = {
+            courseName: 'Javascript',
+            duration: '6 Months',
+            tutor: 'Geekyshows'
+        }
+
+        function show(course) {
+            console.log("course.courseName: ", course.courseName)
+            console.log("course.duration: ", course.duration)
+            console.log("course.tutor: ", course.tutor)
+        }
+
+        show(course)
+
+        function showOne({
+            courseName,
+            duration,
+            tutor
+        }) {
+            console.log("courseName: ", courseName)
+            console.log("duration: ", duration)
+            console.log("tutor: ", tutor)
+        }
+
+        showOne(course)
+
+        function showTwo(course) {
+            return course
+        }
+
+        var a = showTwo(course)
+        console.log("a.courseName: ", a.courseName)
+        console.log("a.duration: ", a.duration)
+        console.log("a.tutor: ", a.tutor)
+
+
+        var {
+            courseName,
+            duration,
+            tutor
+        } = a
+        console.log("courseName: ", courseName)
+        console.log("duration: ", duration)
+        console.log("tutor: ", tutor)
+
+        var {
+            courseName,
+            duration,
+            tutor
+        } = showTwo(course)
+        console.log("courseName: ", courseName)
+        console.log("duration: ", duration)
+        console.log("tutor: ", tutor)
+
+        var course = {
+            courseName: 'Javascript',
+            duration: '6 Months',
+            tutor: 'Geekyshows',
+            student: {
+                stu1: 'Sonam',
+                stu2: 'Rahul'
+            }
+        }
+
+        console.log("course.courseName: ", course.courseName)
+        console.log("course.duration: ", course.duration)
+        console.log("course.tutor: ", course.tutor)
+        console.log("course.student.stu1: ", course.student.stu1)
+        console.log("course.student.stu2: ", course.student.stu2)
+
+        var {
+            courseName,
+            duration,
+            tutor,
+            student: {
+                stu1,
+                stu2
+            }
+        } = course
+        console.log("course.courseName: ", course.courseName)
+        console.log("course.duration: ", course.duration)
+        console.log("course.tutor: ", course.tutor)
+        console.log("stu1: ", stu1)
+        console.log("stu2: ", stu2)
+    </script>
+</body>
+
+</html>
